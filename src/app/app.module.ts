@@ -8,13 +8,15 @@ import { AppComponent } from "./app.component";
 import { CiphersComponent } from "./components/ciphers/ciphers.component";
 import { CipherItemComponent } from "./components/cipher-item/cipher-item.component";
 import { EncryptComponent } from "./components/encrypt/encrypt.component";
+import { EncryptedComponent } from "./components/encrypted/encrypted.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     CiphersComponent,
     CipherItemComponent,
-    EncryptComponent
+    EncryptComponent,
+    EncryptedComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -10,6 +10,7 @@ import { Cipher } from "../../models/Cipher";
 })
 export class CiphersComponent implements OnInit {
   ciphers: Cipher[];
+  result: string = "";
 
   constructor(private cipherService: CipherService) {}
 
@@ -19,9 +20,11 @@ export class CiphersComponent implements OnInit {
     });
   }
 
-  newEncryption(cipher:Cipher) {
+  newEncryption(cipher: Cipher) {
     this.cipherService.newEncryption(cipher).subscribe(cipher => {
-      this.ciphers.unshift(cipher)
-    })
+      console.log(cipher.afterShift);
+      this.result = cipher.afterShift;
+      this.ciphers.unshift(cipher);
+    });
   }
 }
