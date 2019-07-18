@@ -22,7 +22,6 @@ export class CiphersComponent implements OnInit {
 
   newEncryption(cipher: Cipher) {
     this.cipherService.newEncryption(cipher).subscribe(cipher => {
-      console.log(cipher.afterShift);
       this.result = cipher.afterShift;
       this.ciphers.unshift(cipher);
     });
