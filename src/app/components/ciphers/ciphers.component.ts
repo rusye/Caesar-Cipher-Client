@@ -18,4 +18,10 @@ export class CiphersComponent implements OnInit {
       this.ciphers = ciphers;
     });
   }
+
+  newEncryption(cipher:Cipher) {
+    this.cipherService.newEncryption(cipher).subscribe(cipher => {
+      this.ciphers.unshift(cipher)
+    })
+  }
 }

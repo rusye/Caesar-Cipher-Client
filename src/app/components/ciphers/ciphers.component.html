@@ -1,3 +1,5 @@
-<h2>Previous Searchs</h2>
+<h2>New Encryption</h2>
+<app-encrypt (newEncryption)="newEncryption($event)"></app-encrypt>
+<h2>Previous Encryptions</h2>
 <app-cipher-item *ngFor="let cipher of ciphers" [cipher]="cipher">
 </app-cipher-item>

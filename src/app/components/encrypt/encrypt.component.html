@@ -1,0 +1,5 @@
+<form (ngSubmit)="onSubmit()" ngNativeValidate >
+  <input type="text" name="toEncrypt" [(ngModel)]="toEncrypt" placeholder="Text you want to encrypt" required="">
+  <input type="number" name="shiftAmount" [(ngModel)]="shiftNumber" required>
+  <input type="submit" value="Submit">
+</form>
