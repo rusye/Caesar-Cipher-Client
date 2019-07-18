@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { CipherService } from "../../services/cipher.service";
+
 import { Cipher } from "../../models/Cipher";
 
 @Component({
@@ -9,15 +11,11 @@ import { Cipher } from "../../models/Cipher";
 export class CiphersComponent implements OnInit {
   ciphers: Cipher[];
 
-  constructor() {}
+  constructor(private cipherService: CipherService) {}
 
   ngOnInit() {
-    this.ciphers = [
-      {
-        toShift: "I love node!",
-        afterShift: "E hkra jkza!",
-        shiftAmount: 22
-      }
-    ];
+    this.cipherService.getCiphers().subscribe(ciphers => {
+      this.ciphers = ciphers;
+    });
   }
 }
